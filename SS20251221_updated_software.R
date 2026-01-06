@@ -17,3 +17,14 @@ data_clean$Technology <- factor(data_clean$Technology,
 data_clean$DownloadSpeed <- as.numeric(data_clean$DownloadSpeed)
 
 print(table(data_clean$Technology))
+
+descriptive_stats <- data_clean %>%
+  group_by(Technology) %>%
+  summarise(
+    n = n(),
+    mean = mean(DownloadSpeed),
+    sd = sd(DownloadSpeed),
+    .groups="drop"
+  )
+
+print(descriptive_stats)
