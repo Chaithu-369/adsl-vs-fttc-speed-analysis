@@ -28,3 +28,10 @@ descriptive_stats <- data_clean %>%
   )
 
 print(descriptive_stats)
+
+library(ggplot2)
+
+ggplot(data_clean, aes(x=DownloadSpeed)) +
+  geom_histogram(binwidth=5, color="black") +
+  facet_wrap(~Technology) +
+  theme_minimal()
