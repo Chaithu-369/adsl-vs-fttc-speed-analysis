@@ -48,3 +48,12 @@ t_test_result <- t.test(
 )
 
 print(t_test_result)
+
+alpha <- 0.05
+
+if (t_test_result$p.value < alpha) {
+  cat("Decision: Reject H0 — significant difference in speeds.\n")
+} else {
+  cat("Decision: Fail to reject H0.\n")
+}
+
