@@ -35,3 +35,7 @@ ggplot(data_clean, aes(x=DownloadSpeed)) +
   geom_histogram(binwidth=5, color="black") +
   facet_wrap(~Technology) +
   theme_minimal()
+
+ggplot(data_clean, aes(x=Technology, y=DownloadSpeed)) +
+  geom_boxplot(color="black") +
+  theme_minimal()
