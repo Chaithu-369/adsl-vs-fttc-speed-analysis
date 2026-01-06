@@ -39,3 +39,12 @@ ggplot(data_clean, aes(x=DownloadSpeed)) +
 ggplot(data_clean, aes(x=Technology, y=DownloadSpeed)) +
   geom_boxplot(color="black") +
   theme_minimal()
+
+t_test_result <- t.test(
+  DownloadSpeed ~ Technology,
+  data = data_clean,
+  alternative="two.sided",
+  var.equal=FALSE
+)
+
+print(t_test_result)
